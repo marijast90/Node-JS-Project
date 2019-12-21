@@ -1,0 +1,11 @@
+let express = require("express");
+let router = express.Router();
+let actions = require("./action");
+router.get("/employees/all" , actions.getAllEmployees);
+router.get('/employees/:id', actions.getSpecificEmployee);
+router.post("/employees", actions.createEmployee);
+router.put('/employees/:id', actions.updateEmployee);
+router.delete('/employees/:id', actions.deleteEmployee);
+router.get('/employees/working/:employeeId', actions.employeeWorkingOnProject);
+router.get('/employees/dep/:employeeId', actions.employeeBelongsToDepartment);
+module.exports = router;
